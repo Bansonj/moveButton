@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Move Button On Hover</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/sketchy/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn{
+            position: absolute;
+            top: 30px;
+            left: 30%;
+            transition: .5s ease-in-out;
+            width: 25%;
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button class="btn btn-warning btn-move">Click Me!</button> -->
+    <button class="btn btn-warning btn-move">Click Me!</button>
+    <button class="btn btn-success btn-move">Click Me!</button>
+    <button class="btn btn-info btn-move">Click Me!</button>
+    <button class="btn btn-danger btn-move">Click Me!</button>
+    <button class="btn btn-primary btn-move">Click Me!</button>
+
+
+
+
+    <script>
+        // const btn = document.querySelector('.btn-move');
+        const btn = document.querySelectorAll('.btn-move');
+
+        btn.forEach(button =>{
+            button.addEventListener('mouseenter', ()=>{
+                const offsetLeft = Math.random() * (window.innerWidth - button.clientWidth);
+                const offsetTop = Math.random() * (window.innerHeight - button.clientHeight);
+
+
+                button.style.top = offsetTop + 'px';
+                button.style.left = offsetLeft + 'px';
+            });
+        });
+
+    
+    </script>
+</body>
+</html>
